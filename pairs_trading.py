@@ -27,7 +27,7 @@ from matplotlib.pyplot import figure
 
 
 """ In this program, I will be compiling the 3 different programs: models.py, stationarity.py
-and cointegration.py to build a very simplestic pairs trading strategy """ 
+and cointegration.py to build a very simplestic pairs trading strategy """
 
 """Part-1 of the Program: Fetching data from sources and storing it in a CSV file """
 
@@ -42,7 +42,7 @@ def get_price(symbol): #YYYY/MM/DD
     #print(df.tail())
     #df['Close'].plot(grid=True, figsize=(9,6))
     #plt.ylabel("Price")
-    
+
 
 symbol_1 = input("Enter the first Symbol/Ticker: ")
 get_price(symbol_1)
@@ -147,7 +147,7 @@ print()
 
 """ Part-4: Performing Cointegration of the 2 security pairs """
 
-""" let us write the code to calculate the spread first """ 
+""" let us write the code to calculate the spread first """
 
 data1 = sm.add_constant(data1)
 results = sm.OLS(data2, data1).fit()
@@ -156,7 +156,7 @@ b = results.params[filename1.split('.')[0]]
 
 spread = data2 - b * data1
 
-""" The code below will plot the prices for SPY and DIA time series, and the ratio 
+""" The code below will plot the prices for SPY and DIA time series, and the ratio
 and the zscore time series"""
 
 def zscore(series):
@@ -174,18 +174,16 @@ plt.legend(['Spread z-score', 'Mean', '+1', '-1'])
 """ A couple of questions:
     - How do I backtest this strategy and find the Sharpe, PnL, etc?
     - Which biases might exist in this strategy, and how to avoid them?
-    - What exactly should I be doing with this now? I mean,I can see that I need to 
-    short the spread, but what exactly does it mean by that? 
-    - How do I calculate the hedge ratio, and exactly how many shares to go short/long? 
+    - What exactly should I be doing with this now? I mean,I can see that I need to
+    short the spread, but what exactly does it mean by that?
+    - How do I calculate the hedge ratio, and exactly how many shares to go short/long?
     - Another thing to think about: this strategy which you've coded basically uses daily price data.
     Do you think you can find more profitable stuff if you use different data sets such as
     hourly data, or minute-by-minute data? Try working on these things"""
-    
+
 """ In our case, we have the following Entry Signals:
     - When z-score > 1, short 'data2' and buy 'data1'
     - When z-score < -1, buy 'data2' and short 'data1' """
-    
-    
+
+print("Done")
 #Pg-109
-
-

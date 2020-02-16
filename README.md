@@ -1,4 +1,4 @@
-# Strat
+# Introduction
 
 A simple program which downloads stock price data and executes a pairs trading strategy on two stocks (can be modified for a basket of stocks). 
 

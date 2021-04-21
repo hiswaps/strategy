@@ -171,14 +171,6 @@ plt.axhline(-1.0, color='green', linestyle='--')
 plt.legend(['Spread z-score', 'Mean', '+1', '-1'])
 
 
-""" Try asking yourself a bunch of Questions:
-    - How do I backtest this strategy and find the Sharpe, PnL, etc?
-    - Which biases might exist in this strategy, and how to avoid them?
-    - How do I calculate the hedge ratio, and exactly how many shares to go short/long?
-    - Another thing to think about: this strategy which you've coded basically uses daily price data.
-    Do you think you can find more profitable stuff if you use different data sets such as
-    hourly data, or minute-by-minute data? Try working on these things"""
-
 """ In our case, we have the following Entry Signals:
     - When z-score > 1, short 'data2' and buy 'data1'
     - When z-score < -1, buy 'data2' and short 'data1' """
